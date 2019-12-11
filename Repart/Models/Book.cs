@@ -6,19 +6,17 @@ using System.Web;
 
 namespace Repart.Models
 {
-    public class Customer
+    public class Book
     {
         [Required]
         [StringLength(255)]
-        public String CustomerName { get; set; }
+        public String BookName { get; set; }
+        
+        public String Author { get; set; }
 
-
+        [Required]
+        public bool Available { get; set; }
         public int Id { get; set; }
 
-
-        public DateTime DateOfBirth { get; set; }
-
-
-        public bool CustomerSubscribedToNewsletter { get; set; }
     }
 }
