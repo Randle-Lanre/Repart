@@ -18,6 +18,7 @@ namespace Repart.Controllers
          * and can also even remove the listing of the books
          *
          *model:    books, customers, genre (TODO: set relationships )
+         * add Age restriction, i.e some books are available to people only over 18 years of age
          *
          *navbar would be (customers, books )
          *
