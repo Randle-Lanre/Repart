@@ -1,0 +1,44 @@
+﻿@model Repart.ViewModel.CustomerViewModel
+@{
+    ViewBag.Title = "List of Available Books and Customers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ListOfAvailableBooks</h2>
+
+
+<h1>Names of customers</h1>
+<ul>
+    
+    @{
+        foreach (var eachPerson in Model.Customers)
+        {
+            <li>@eachPerson.CustomerName</li>
+            <li>@eachPerson.DateOfBirth.ToString("MM/dd/yyyy")</li>
+            <li>@eachPerson.CustomerSubscribedToNewsletter <br/><br/></li>
+          
+            
+
+
+        }
+    }
+</ul>
+
+
+<h1>Names of Books</h1>
+<ul>
+    
+    @{
+        foreach (var eachPerson in Model.Books)
+        {
+            <li>@eachPerson.BookName</li>
+            <li>@eachPerson.Author</li>
+            <li>@eachPerson.Available<br/><br/></li>
+            
+
+
+
+        }
+    }
+</ul>
+
