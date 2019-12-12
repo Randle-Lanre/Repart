@@ -255,10 +255,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Books\ListOfAvailableBooks.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Books\" />
+    <Folder Include="ViewModel\" />
     <Folder Include="Views\Customers\" />
     <Folder Include="Views\Purchases\" />
   </ItemGroup>
