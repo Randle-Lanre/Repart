@@ -1,0 +1,41 @@
+﻿@model Repart.ViewModel.BooksViewModel
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New</h2>
+
+@using (Html.BeginForm("save", "Books"))
+{
+    @Html.ValidationSummary(true, "check that all values have been entered correctly")
+    <div class="form-group">
+        @Html.LabelFor(b=> b.BookName)
+        @Html.TextBoxFor(b=> b.BookName, new{@class = "form-control"} )
+        @Html.ValidationMessageFor(b=> b.BookName)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(b=> b.Author)
+        @Html.TextBoxFor(b=> b.Author, new {@class = "form-control"})
+        @Html.ValidationMessageFor(b=>b.Author)
+
+    </div>
+    
+    <div class="checkbox">
+        <label>
+            @Html.CheckBoxFor(b => b.Available)
+        </label>
+        
+
+    </div>
+    @Html.HiddenFor(b=>b.Id)
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-primary">Save</button>
+
+}
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

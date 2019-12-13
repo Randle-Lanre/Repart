@@ -4,20 +4,21 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace Repart.Models
+namespace Repart.ViewModel
 {
-    public class Book
+    public class BooksViewModel
     {
+
         [Required]
         [StringLength(255)]
         [Display(Name = "Book Name")]
         public String BookName { get; set; }
-        
+
         public String Author { get; set; }
 
         [Required]
         public bool Available { get; set; }
-
         public int Id { get; set; }
+
     }
 }

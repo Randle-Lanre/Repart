@@ -191,6 +191,10 @@
     <Compile Include="Migrations\201912111923553_addedforeignkeysToPurchasesAndUpdatedDbset.Designer.cs">
       <DependentUpon>201912111923553_addedforeignkeysToPurchasesAndUpdatedDbset.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201912122232042_booksViewModel.cs" />
+    <Compile Include="Migrations\201912122232042_booksViewModel.Designer.cs">
+      <DependentUpon>201912122232042_booksViewModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -202,6 +206,7 @@
     <Compile Include="Models\RolePriviledge.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModel\BooksViewModel.cs" />
     <Compile Include="ViewModel\CustomerViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -261,6 +266,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Books\ListOfBooks.cshtml" />
+    <Content Include="Views\Books\New.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -290,6 +296,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201912111923553_addedforeignkeysToPurchasesAndUpdatedDbset.resx">
       <DependentUpon>201912111923553_addedforeignkeysToPurchasesAndUpdatedDbset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912122232042_booksViewModel.resx">
+      <DependentUpon>201912122232042_booksViewModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

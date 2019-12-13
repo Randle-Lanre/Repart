@@ -89,6 +89,37 @@ namespace Repart.Controllers
             return View();
         }
 
+        //TODO: fix bug with posting new data to the server
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Save(Book book)
+        {
+            if (!ModelState.IsValid)
+                return View("New");
+
+
+            if (book.Id == 0)
+            {
+                _context.Books.Add(book);
+            }
+            else
+            {
+                var booksInDatabase = _context.Books.Single(b => b.Id == book.Id);
+                booksInDatabase.Author = book.Author;
+                booksInDatabase.BookName = book.BookName;
+                booksInDatabase.Available = book.Available;
+
+            }
+
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "Books");
+
+
+
+
+        }
+
         //delete a set of movies 
         //TODO: add use either roles or users to filter down who can make changes
         //[Authorize(Roles = RolePriviledge.CanDeleteBooks)]
