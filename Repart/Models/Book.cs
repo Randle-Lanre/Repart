@@ -19,5 +19,8 @@ namespace Repart.Models
         public bool Available { get; set; }
 
         public int Id { get; set; }
+
+
+        
     }
 }

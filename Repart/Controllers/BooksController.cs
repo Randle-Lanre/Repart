@@ -90,6 +90,8 @@ namespace Repart.Controllers
         }
 
         //TODO: fix bug with posting new data to the server
+        //Bug fixed because the ID not really needed in the view, and the database would
+        //auto increment that check view NEW and ViewModel Book
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Save(Book book)
@@ -98,20 +100,22 @@ namespace Repart.Controllers
                 return View("New");
 
 
-            if (book.Id == 0)
-            {
-                _context.Books.Add(book);
-            }
-            else
-            {
-                var booksInDatabase = _context.Books.Single(b => b.Id == book.Id);
-                booksInDatabase.Author = book.Author;
-                booksInDatabase.BookName = book.BookName;
-                booksInDatabase.Available = book.Available;
 
-            }
+            //if (book.Id == 0)
+            //{
+            //    _context.Books.Add(book);
+            //}
+            //else
+            //{
+            //    var booksInDatabase = _context.Books.Single(b => b.Id == book.Id);
+            //    booksInDatabase.Author = book.Author;
+            //    booksInDatabase.BookName = book.BookName;
+            //    booksInDatabase.Available = book.Available;
 
+            //}
+            _context.Books.Add(book);
             _context.SaveChanges();
+
 
             return RedirectToAction("Index", "Books");
 
